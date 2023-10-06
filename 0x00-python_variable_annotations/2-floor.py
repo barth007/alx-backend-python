@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-import math
 
 """
 The modules takes n as arguments as type as float and
 returns the floor value of n
 """
+import math
 
 
 def floor(n: float) -> int:
