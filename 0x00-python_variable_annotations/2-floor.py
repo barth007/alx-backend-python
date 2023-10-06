@@ -11,6 +11,8 @@ def floor(n: float) -> int:
     """
     evalutes the floor value of n
     and returns an integer
+    args:
+       n(float) = arguments
     """
 
     result: float = math.floor(n)
