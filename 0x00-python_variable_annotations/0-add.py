@@ -3,4 +3,5 @@
 def add(a: int, b: int) -> int:
     """ adds two integers and returns the result"""
 
-    return a + b
+    result: int = a + b
+    return result
