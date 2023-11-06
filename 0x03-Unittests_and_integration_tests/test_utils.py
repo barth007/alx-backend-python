@@ -9,7 +9,8 @@ from parameterized import parameterized
 from typing import (
     Mapping,
     Sequence,
-    Any
+    Any,
+    Type
 )
 
 
@@ -32,3 +33,19 @@ class TestAccessNestedMap(unittest.TestCase):
         """
 
         self.assertEqual(access_nested_map(input, path), expected)
+
+    @parameterized.expand([
+        ({}, ("a",), KeyError),
+        ({"a": 1}, ("a", "b"), KeyError),
+    ])
+    def test_access_nested_map_exception(
+            self,
+            input: Mapping,
+            path: Sequence,
+            expected: Type[KeyError]):
+        """
+        This test raises a KeyError
+        """
+
+        with self.assertRaises(expected):
+            access_nested_map(input, path)
